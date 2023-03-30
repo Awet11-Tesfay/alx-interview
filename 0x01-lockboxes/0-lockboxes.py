@@ -32,5 +32,4 @@ def canUnlockAll(boxes):
                 myKeys.append(boxKey)
     if len(myKeys) == len(boxes):
         return True
-    return False
-    
+    return False    
