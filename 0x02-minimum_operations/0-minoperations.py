@@ -8,7 +8,7 @@
 
 
 def minOperations(n):
-    if n < 2:
+    if not isinstance(n, int):
         return 0
 
     a = 0
