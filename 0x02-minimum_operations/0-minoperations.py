@@ -9,7 +9,8 @@ characters in the file
 
 
 def minOperations(n):
-    if n < 2:
+    ''' If n is impossible to achive return 0 '''
+    if n < 2 or type(n) is not int:
         return 0
 
     a = 0
