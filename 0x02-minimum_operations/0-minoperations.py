@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 '''
 In a ext file there is a single cahracter H your text
 editor can execue only two operations in this file copy all
@@ -9,7 +9,7 @@ characters in the file
 
 
 def minOperations(n):
-    if not isinstance(n, int):
+    if n < 2:
         return 0
 
     a = 0
