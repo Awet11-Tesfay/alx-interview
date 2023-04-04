@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-''' Description: In a ext file there is a single cahracter H your text
-                 editor can execue only two operations in this file copy all
-                 and paste given a number n write a method that calculates the
-                 fewest number of operations needed to result in exactly n H
-                 characters in the file
+'''
+In a ext file there is a single cahracter H your text
+editor can execue only two operations in this file copy all
+and paste given a number n write a method that calculates the
+fewest number of operations needed to result in exactly n H
+characters in the file
 '''
 
 
