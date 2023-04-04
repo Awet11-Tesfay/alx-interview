@@ -8,7 +8,7 @@
 
 
 def minOperations(n):
-    if n < 2 or type(n) is not int:
+    if n < 2:
         return 0
 
     a = 0
