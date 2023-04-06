@@ -10,14 +10,15 @@ characters in the file
 
 def minOperations(n):
     ''' If n is impossible to achive return 0 '''
-    if n < 2 or type(n) is not int:
+    if not isinstance(n, int):
         return 0
 
     a = 0
     x = 2
     while (x <= n):
         if not (n % x):
-            n = int(n / x)
+            n = int(n / i)
             a += x
             x = 1
+        x += 1
     return a
