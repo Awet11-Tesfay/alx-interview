@@ -15,8 +15,8 @@ def minOperations(n):
 
     a = 0
     x = 2
-    while (x <= n):cls
-    
+    while (x <= n):
+
         if not (n % x):
             n = int(n / x)
             a += x
