@@ -14,7 +14,6 @@ if __name__ == "__main__":
             "405": 0,
             "500": 0
             }
-
     count = 1
     file_size = 0
 
