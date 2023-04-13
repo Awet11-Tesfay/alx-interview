@@ -1,46 +1,46 @@
 #!/usr/bin/python3
-""" write a script that reads stdin line by line and computes metrics """
+""" Write a script that reads stdin line by line and computes metrics """
 
 import sys
 
 
 if __name__ == "__main__":
     code = {"200": 0,
-            "301": 0,
-            "400": 0,
-            "401": 0,
-            "403": 0,
-            "404": 0,
-            "405": 0,
-            "500": 0}
+               "301": 0,
+               "400": 0,
+               "401": 0,
+               "403": 0,
+               "404": 0,
+               "405": 0,
+               "500": 0}
     count = 1
     file_size = 0
 
-    def parse(line):
-        """ read line """
+    def parse_line(line):
+        """ parse data"""
         try:
-            parsed = line.split()
-            stat_code = parse[-2]
-            if stat_code in code.keys():
-                code[stat_code] += 1
-            return int(parse[-1])
+            parsed_line = line.split()
+            status_code = parsed_line[-2]
+            if status_code in code.keys():
+                code[status_code] += 1
+            return int(parsed_line[-1])
         except Exception:
             return 0
 
-    def print():
-        """ prints status in ascending order """
+    def print_stats():
+        """print stat in ascending order"""
         print("File size: {}".format(file_size))
-        for key in sorted(code.keys):
+        for key in sorted(code.keys()):
             if code[key]:
                 print("{}: {}".format(key, code[key]))
 
     try:
         for line in sys.stdin:
-            file_size += parse(line)
+            file_size += parse_line(line)
             if count % 10 == 0:
-                print()
+                print_stats()
             count += 1
     except KeyboardInterrupt:
-        print()
+        print_stats()
         raise
-    print()
+    print_stats()
