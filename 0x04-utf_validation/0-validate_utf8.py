@@ -6,6 +6,7 @@
 def validUTF8(data):
     """ Return true if data is a valid UTF-8 encoding. else return false
     """
+    
     do1 = 1 << 7
     do2 = 1 << 6
     number_bytes = 0
