@@ -1,15 +1,28 @@
 #!/usr/bin/node
 
-const axios = require('axios');
-
-async function printCharacters(movieId) {
-  const filmUrl = `https://swapi.dev/api/films/${movieId}/`;
-  const { data } = await axios.get(filmUrl);
-  const characters = data.characters;
-  for (const character of characters) {
-    const { data } = await axios.get(character);
-    console.log(data.name);
-  }
-}
-
-printCharacters(3);
+ const request = require('request');
+ 
+ const filmNum = process.argv[2] + '/';
+ const filmURL = 'https://swapi-api.hbtn.io/api/films/';
+ 
+ // Makes API request, sets async to allow await promise
+ request(filmURL + filmNum, async function (err, res, body) {
+   if (err) return console.error(err);
+ 
+   // find URLs of each character in the film as a list obj
+   const charURLList = JSON.parse(body).characters;
+ 
+   // Use URL list to character pages to make new requests
+   // await queues requests until they resolve in order
+   for (const charURL of charURLList) {
+     await new Promise(function (resolve, reject) {
+       request(charURL, function (err, res, body) {
+         if (err) return console.error(err);
+ 
+         // finds each character name and prints in URL order
+         console.log(JSON.parse(body).name);
+         resolve();
+       });
+     });
+   }
+});
