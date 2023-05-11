@@ -6,8 +6,8 @@
 def rotate_2d_matrix(matrix):
     """ Do not return anything
     """
-    x = len(matrix[0])
+    n = len(matrix[0])
 
-    for i in range(x - 1, -1, -1):
-        for j in range(x):
+    for i in range(n - 1, -1, -1):
+        for j in range(n):
             matrix[j].append(matrix[i].pop())
