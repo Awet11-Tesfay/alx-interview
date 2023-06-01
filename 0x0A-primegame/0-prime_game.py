@@ -2,13 +2,18 @@
 """ Prime Game
 """
 
+
 def prime_game(n):
     """ List of Prime numbers
     """
-    for x in range(2, int(n ** 0.5) + 1):
-        if not % in x:
-            return False
-    return True
+    game = []
+    gabe_b = [True] * (n + 1)
+    for m = in range(2, n + 1):
+        if (game_b[m]):
+            game.append(m)
+            for z in range(m, n + 1, m):
+                game_b[z] = False
+    return game
 
 
 def isWinner(x, nums):
