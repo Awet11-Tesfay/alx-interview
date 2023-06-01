@@ -8,7 +8,7 @@ def prime_game(n):
     """
     game = []
     game_b = [True] * (n + 1)
-    for m  in range(2, n + 1):
+    for m in range(2, n + 1):
         if (game_b[m]):
             game.append(m)
             for z in range(m, n + 1, m):
